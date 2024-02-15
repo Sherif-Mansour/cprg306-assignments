@@ -2,25 +2,21 @@
 
 import { useState } from "react";
 import Item from "./item";
-import Items from "./items.json";
 
-export default function ItemList() {
+export default function ItemList({ items }) {
   const [sortBy, setSortBy] = useState("name");
 
-  Items.sort((a, b) => {
+  const sortedItems = [...items].sort((a, b) => {
     if (sortBy === "name") {
       return a.name.localeCompare(b.name);
     } else if (sortBy === "category") {
       return a.category.localeCompare(b.category);
     }
-    // else if (sortBy === "groupedCategory") {
-    //     return a.category.localeCompare(b.category) || a.name.localeCompare(b.name);
-    // }
   });
 
   return (
     <div>
-      <label for="sort">Sort by: </label>
+      <label htmlFor="sort">Sort by: </label>
 
       <button
         className="bg-orange-700 p-1 m-2 w-28 focus:bg-orange-500"
@@ -34,10 +30,9 @@ export default function ItemList() {
       >
         Category
       </button>
-      {/* <button className="bg-orange-700 p-1 m-2 w-28 focus:bg-orange-500" onClick={() => setSortBy("groupedCategory")}>Grouped Category</button> */}
 
       <ul>
-        {Items.map((item, id) => {
+        {sortedItems.map((item, id) => {
           return (
             <Item
               key={id}
