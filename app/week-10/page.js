@@ -42,7 +42,7 @@ export default function Page() {
                 Sign Out
               </button>
               <br />
-              <Link href="/week-8/shopping-list">
+              <Link href="/week-10/shopping-list">
                 Continue to your Shopping List
               </Link>
             </div>
