@@ -45,6 +45,9 @@ export default function Page() {
 
       // Update the state to include the new item
       setItems([...items, item]);
+
+      // Refresh the list of items
+      loadItems();
     } catch (error) {
       console.error("Error adding item: ", error);
     }
