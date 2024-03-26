@@ -5,7 +5,7 @@ import { useState, useEffect } from "react";
 import ItemList from "./item-list";
 import NewItem from "./new-item";
 import MealIdeas from "./meal-ideas";
-import { getItems, addItem } from "./_services/shopping-list-service";
+import { getItems, addItem } from "../_services/shopping-list-service";
 
 export default function Page() {
   const [items, setItems] = useState(ItemsData);
