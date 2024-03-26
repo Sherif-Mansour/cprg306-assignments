@@ -8,7 +8,7 @@ import MealIdeas from "./meal-ideas";
 import { getItems, addItem } from "../_services/shopping-list-service";
 
 export default function Page() {
-  const [items, setItems] = useState(ItemsData);
+  const [items, setItems] = useState([]);
   const [selectedItemName, setSelectedItemName] = useState(null);
 
   const handleAddItem = async (item) => {
